@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Activity Dashboard</title>
+    <link rel="stylesheet" href="patientstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Welcome to Your Wellness Journey</h1>
+    </header>
+
+    <main class="dashboard">
+        <div class="tile" id="activityTile">
+            <h3>Activity Tracker</h3>
+            <p id="activityData">No activity data yet</p>
+        </div>
+        <div class="tile" id="affirmationTile">
+            <h3>Daily Affirmation</h3>
+            <p id="affirmationData">No affirmation set</p>
+        </div>
+        <div class="tile" id="goalsTile">
+            <h3>Goals</h3>
+            <p id="goalsData">No goals set</p>
+        </div>
+        <div class="tile" id="journalTile">
+            <h3>My Journal</h3>
+            <p id="journalData">No journal entries</p>
+        </div>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Encouraging Wellness and Hope Every Day © 2024</p>
+    </footer>
+</div>
+
+<script src="/patient/patientScript.js"></script>
+</body>
+</html>
