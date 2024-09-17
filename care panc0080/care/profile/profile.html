@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="/profile/profile.css">
+</head>
+<body>
+
+<div class="profile-container">
+    <h1>Edit Profile</h1>
+
+    <form id="profileForm">
+        <!-- Profile Picture Upload -->
+        <div class="form-group">
+            <label for="profileImage">Profile Picture</label>
+            <input type="file" id="profileImage" accept="image/*">
+            <img id="imagePreview" alt="Profile Picture Preview" style="display: none; width: 150px; height: 150px; margin-top: 10px;">
+        </div>
+
+        <!-- User Summary Bio -->
+        <div class="form-group">
+            <label for="bio">User Bio</label>
+            <textarea id="bio" placeholder="Write your bio here..." rows="4"></textarea>
+        </div>
+
+        <!-- Demographic Fields -->
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username">
+
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+            <input type="checkbox" id="showPassword"> Show Password
+
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" placeholder="Enter your age">
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender">
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="height">Height (cm)</label>
+            <input type="number" id="height" placeholder="Enter your height">
+        </div>
+
+        <div class="form-group">
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" placeholder="Enter your weight">
+        </div>
+
+        <!-- Save Button -->
+        <div class="form-group">
+            <button type="button" id="saveProfile">Save Profile</button>
+        </div>
+    </form>
+</div>
+
+<!-- Success Popup -->
+<div id="savePopup" class="popup">
+    <div class="popup-content">
+        <p>Details saved successfully!</p>
+        <button id="closePopup">Close</button>
+    </div>
+</div>
+
+<script src="/profile/profile.js"></script>
+</body>
+</html>

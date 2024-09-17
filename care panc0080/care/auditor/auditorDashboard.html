@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auditor Dashboard</title>
+  <link rel="stylesheet" href="/auditor/auditorStyle.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+          <h1>Auditor Dashboard</h1>
+          <button class="logout-button" onclick="logout()">Logout</button>
+        </div>
+      </header>
+
+  <div class="dashboard">
+    <!-- Card 1: Number of Patients Treated -->
+    <div class="card">
+      <h2>The Number of Patients Treated by Each Therapist</h2>
+      <label for="therapist-dropdown-1">Select Therapist:</label>
+      <select id="therapist-dropdown-1" class="dropdown" onchange="displayTherapistData(1)">
+        <option value="">-- Select Therapist --</option>
+      </select>
+      <div id="therapist-info-1" class="therapist-info"></div>
+      <div id="therapist-patient-list-1" class="card-content"></div>
+    </div>
+
+    <!-- Card 2: Types of Cases Overseen -->
+    <div class="card">
+      <h2>The Types of Cases That Each Therapist Oversees</h2>
+      <label for="therapist-dropdown-2">Select Therapist:</label>
+      <select id="therapist-dropdown-2" class="dropdown" onchange="displayTherapistData(2)">
+        <option value="">-- Select Therapist --</option>
+      </select>
+      <div id="therapist-info-2" class="therapist-info"></div>
+      <div id="therapist-patient-list-2" class="card-content"></div>
+    </div>
+
+    <!-- Card 3: Length of Consultation -->
+    <div class="card">
+      <h2>The Length of Consultation with Each Patient</h2>
+      <label for="therapist-dropdown-3">Select Therapist:</label>
+      <select id="therapist-dropdown-3" class="dropdown" onchange="displayTherapistData(3)">
+        <option value="">-- Select Therapist --</option>
+      </select>
+      <div id="therapist-info-3" class="therapist-info"></div>
+      <div id="therapist-patient-list-3" class="card-content"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 Mental Health Journaling App. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Modal for Patient Information -->
+  <div id="patient-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="patient-name"></h2>
+      <p id="patient-info"></p>
+      <p id="treatment-time"></p>
+      <p id="treatment-duration"></p>
+    </div>
+  </div>
+
+  <script src="/auditor/auditorScript.js"></script>
+</body>
+</html>

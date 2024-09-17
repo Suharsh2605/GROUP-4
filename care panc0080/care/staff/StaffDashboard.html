@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Staff Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/staff/StaffStyle.css">
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <h1>Professional Staff Dashboard</h1>
+    </div>
+    <div class="profile-icon" onclick="toggleDropdownMenu()">
+      <img src="/path/to/default-profile.png" alt="Profile" class="circle-img">
+    </div>
+    <div id="dropdown-menu" class="dropdown-content">
+      <img src="/path/to/default-profile-circle.png" alt="Profile" class="circle-img">
+      <p>User Name</p>
+      <button onclick="editInformation()">Edit Information</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+  <div class="container">
+    <header>
+        <h2>Appointment Schedule Dashboard</h2>
+    </header>
+
+    <div class="filter-section">
+      <label for="department-select">Select Department:</label>
+      <select id="department-select" onchange="filterAppointments()">
+        <option value="pulmonologist">Pulmonologist</option>
+        <option value="cardiologist">Cardiologist</option>
+        <option value="general">General</option>
+      </select>
+
+      <label for="doctor-select">Select Doctor:</label>
+      <select id="doctor-select" onchange="filterAppointments()">
+        <option value="all">All</option>
+        <option value="dr-jacob">Dr. Jacob</option>
+        <option value="dr-hannah">Dr. Hannah</option>
+        <option value="dr-michael">Dr. Michael</option>
+        <option value="dr-william">Dr. william</option>
+      </select>
+    </div>
+
+    <div id="calendar">
+      <table>
+        <thead>
+          <tr>
+            <th>Days</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+          </tr>
+        </thead>
+        <tbody id="appointment-table">
+          <!-- Rows will be dynamically populated here based on selected doctor and department -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="pagination-buttons">
+      <button id="prevBtn" onclick="changePage(-1)">Previous</button>
+      <button id="nextBtn" onclick="changePage(1)">Next</button>
+      <button class="print" onclick="printPatientDetails()">Print</button>
+    </div>
+
+    <!-- Appointment Details Modal -->
+    <div id="appointment-details" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>Appointment Details</h2>
+        <p><strong>Patient Name:</strong> <a href="#" id="patient-name" onclick="showPatientDetails(event)">James Smith</a></p>
+        <p><strong>Mobile Number:</strong> <span id="patient-mobile"></span></p>
+        <p><strong>Time:</strong> <span id="appointment-time"></span></p>
+        <p><strong>Visit Doctor:</strong> <span id="appointment-doctor"></span></p>
+        <p><strong>Visit Reason:</strong> <span id="visit-reason"></span></p>
+        <div class="btn-group">
+          <button class="reschedule" onclick="rescheduleAppointment()">Re-schedule</button>
+          <button class="reject" onclick="rejectAppointment()">Reject</button>
+          <button class="accept" onclick="acceptAppointment()">Accept</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Patient Details Modal -->
+    <div id="patient-details" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>Patient Details</h2>
+        <p><strong>Name:</strong> <span id="modal-patient-name"></span></p>
+        <p><strong>Age:</strong> <span id="modal-patient-age"></span></p>
+        <p><strong>Height:</strong> <span id="modal-patient-height"></span></p>
+        <p><strong>Weight:</strong> <span id="modal-patient-weight"></span></p>
+        <p><strong>Diseases:</strong> <span id="modal-patient-diseases"></span></p>
+      </div>
+    </div>
+
+  </div>
+  
+  <div id="notification-popup" class="notification-popup">
+    <p id="notification-message"></p>
+</div>
+<footer></footer>
+  <p>© 2024 Professional Staff Dashboard. All rights reserved.</p>
+</footer>
+
+  <script src="/staff/StaffScript.js"></script>
+</body>
+</html>

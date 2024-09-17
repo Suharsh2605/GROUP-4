@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapist Dashboard - CaRe App</title>
+    <link rel="stylesheet" href="therapistStyle.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="profile-container">
+                <img src="/images/therapist.png" alt="Therapist Profile" class="profile-icon" onclick="toggleDropdown()">
+                <div id="profileDropdown" class="dropdown-content">
+                    <img src="/images/therapist.png" alt="Profile Image" class="profile-image">
+                    <p id="username">Jane Doe</p>
+                    <p id="usertype">Therapist</p>
+                    <button onclick="editProfile()">Edit Information</button>
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+        <h1>Therapist Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="#" id="nav-dashboard" class="active">Dashboard</a></li>
+                    <li><a href="#" id="nav-patients">Patients</a></li>
+                    <li><a href="#" id="nav-groups">Groups</a></li>
+                    
+                </ul>
+            </nav>
+        </aside>
+        <main id="main-content">
+            <section id="dashboard-section" class="content">
+                <div class="dashboard-container">
+                    <!-- Overlapping cards with graph and analytics tiles -->
+                    <div class="card tile tile-1">
+                        <h3>Patient Activity</h3>
+                        <div class="graph-container">
+                            <!-- Placeholder for graph -->
+                            <canvas id="activityGraph"></canvas>
+                        </div>
+                    </div>
+                    <div class="card tile tile-2">
+                        <h3>Therapy Sessions</h3>
+                        <div class="graph-container">
+                            <!-- Placeholder for graph -->
+                            <canvas id="therapySessionsGraph"></canvas>
+                        </div>
+                    </div>
+                    <div class="card tile tile-3">
+                        <h3>Recent Journal Entries</h3>
+                        <div class="analytics-container">
+                            <!-- Placeholder for recent journal entries -->
+                            <ul id="recentJournalEntries"></ul>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <section id="patients-section" class="content"></section>
+            <section id="groups-section" class="content">
+                <div class="group-container">
+                   <div class="group-container">
+        <!-- Patient List Box -->
+        <div class="patient-list-box">
+            <h2>Patient List</h2>
+            <div id="patient-list" class="patient-list"></div>
+            <div class="pagination-controls"></div> <!-- Pagination for patient list -->
+        </div>
+
+        <!-- Group Creation Box -->
+        <div class="group-creation-box">
+            <h2>Create New Group</h2>
+            <label for="groupName">Group Name:</label>
+            <input type="text" id="groupName" placeholder="Enter group name">
+
+            <label for="sessionDate">Session Date:</label>
+            <input type="date" id="sessionDate">
+
+            <label for="sessionTime">Session Time:</label>
+            <input type="time" id="sessionTime">
+
+            <button onclick="createGroup()">Create Group</button>
+
+            <div id="groups-container"></div> <!-- This will hold created groups -->
+        </div>
+    </div>
+            </section>
+           
+            <div id="popup-overlay">
+                <div id="popup-content"></div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>© 2024 CaRe. All rights reserved.</p>
+    </footer>
+
+    <script src="therapistScript.js"></script>
+</body>
+</html>
